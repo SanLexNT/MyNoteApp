@@ -13,9 +13,9 @@ import com.sanlex.mynoteapp.R
 import com.sanlex.mynoteapp.model.Note
 
 
-class NoteAdapter(private val context: Context, noteList: List<Note>) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter(private val context: Context) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
-    private var notes: List<Note> = noteList
+    private var notes: List<Note> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.note_item_layout, parent, false)
