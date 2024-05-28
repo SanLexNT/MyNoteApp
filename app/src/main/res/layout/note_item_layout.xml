@@ -8,7 +8,7 @@
     android:layout_margin="@dimen/default_dimen"
     android:id="@+id/cardView"
     app:cardCornerRadius="@dimen/big_dimen"
-    app:strokeWidth="5dp"
+    app:strokeWidth="3dp"
     app:strokeColor="@color/main">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,10 +20,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_title"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:maxLength="10"
             android:textColor="@color/main"
+            android:maxLength="20"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,12 +33,12 @@
             android:id="@+id/item_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/item_title"
-            android:maxLines="6"
+            android:maxLines="4"
             tools:text="Description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

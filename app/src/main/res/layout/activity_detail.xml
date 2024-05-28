@@ -5,6 +5,101 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/big_dimen"
     tools:context=".screens.detail.DetailActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textInputTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/title_placeholder"
+        app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/main"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/ic_error"
+        app:errorIconTint="@color/red"
+        app:counterMaxLength="20">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/editTextTitle"
+            android:maxLength="20"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTitle"
+        app:layout_constraintTop_toBottomOf="@id/textInputTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/choose_color_title"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroupColor"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonRed"
+            app:buttonTint="@color/red"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonBlue"
+            app:buttonTint="@color/blue"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonGreen"
+            app:buttonTint="@color/green"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonPurple"
+            app:buttonTint="@color/purple"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonOrange"
+            app:buttonTint="@color/orange"/>
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/textInputDescription"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/description_placeholder"
+        app:endIconMode="clear_text"
+        app:endIconTint="@color/main">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text|textMultiLine"
+            android:id="@+id/editTextDescription"
+            android:gravity="top"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

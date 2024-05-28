@@ -13,13 +13,15 @@ abstract class NotesDatabase : RoomDatabase() {
     companion object {
         private var instance: NotesDatabase? = null
         private const val DB_NAME = "notes.db"
+        private val LOCK = Any()
 
-        @Synchronized
         fun getInstance(context: Context): NotesDatabase {
-            instance?.let { return it }
-            val database = Room.databaseBuilder(context, NotesDatabase::class.java, DB_NAME).build()
-            instance = database
-            return database
+            synchronized(LOCK){
+                instance?.let { return it }
+                val database = Room.databaseBuilder(context, NotesDatabase::class.java, DB_NAME).build()
+                instance = database
+                return database
+            }
         }
 
     }

@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">My Note App</string>
     <string name="add_new_note">Add new note</string>
+    <string name="title_placeholder">Title</string>
+    <string name="description_placeholder">Description</string>
+    <string name="fill_field_error">Fill this field!</string>
+    <string name="all_fields_filled_warning">All fields must be filled</string>
+    <string name="choose_color_title">Choose note\'s color</string>
+    <string name="update_note">Update note</string>
+    <string name="clear_all_notes">Clear all notes</string>
+    <string name="clear_notes_message">All notes was deleted</string>
 </resources>

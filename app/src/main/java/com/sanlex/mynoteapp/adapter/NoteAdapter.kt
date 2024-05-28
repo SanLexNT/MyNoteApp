@@ -16,6 +16,7 @@ import com.sanlex.mynoteapp.model.Note
 class NoteAdapter(private val context: Context) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     private var notes: List<Note> = emptyList()
+    var onClickListener: ((note: Note) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.note_item_layout, parent, false)
@@ -26,9 +27,13 @@ class NoteAdapter(private val context: Context) : RecyclerView.Adapter<NoteAdapt
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         val note = notes[position]
-        holder.materialCardView.strokeColor = ContextCompat.getColor(context, note.colorId)
+        holder.materialCardView.strokeColor = note.colorId
         holder.textViewTitle.text = note.title
+        holder.textViewTitle.setTextColor(note.colorId)
         holder.textViewDescription.text = note.description
+        holder.itemView.setOnClickListener {
+            onClickListener?.invoke(note)
+        }
     }
 
     fun setNotes(noteList: List<Note>){
@@ -36,7 +41,7 @@ class NoteAdapter(private val context: Context) : RecyclerView.Adapter<NoteAdapt
         notifyDataSetChanged()
     }
 
-    class NoteViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
+    inner class NoteViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         var materialCardView: MaterialCardView
         var textViewTitle: TextView
         var textViewDescription: TextView
@@ -45,6 +50,7 @@ class NoteAdapter(private val context: Context) : RecyclerView.Adapter<NoteAdapt
             materialCardView = itemView.findViewById(R.id.cardView)
             textViewTitle = itemView.findViewById(R.id.item_title)
             textViewDescription = itemView.findViewById(R.id.item_description)
+
         }
     }
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Мои заметки</string>
+    <string name="add_new_note">Создать заметку</string>
+    <string name="title_placeholder">Заголовок</string>
+    <string name="description_placeholder">Описание</string>
+    <string name="fill_field_error">Заполните это поле</string>
+    <string name="all_fields_filled_warning">Заполните все необходимые поля</string>
+    <string name="choose_color_title">Выберите цвет заметки</string>
+</resources>
