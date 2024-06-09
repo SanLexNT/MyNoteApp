@@ -7,4 +7,7 @@
     <string name="fill_field_error">Заполните это поле</string>
     <string name="all_fields_filled_warning">Заполните все необходимые поля</string>
     <string name="choose_color_title">Выберите цвет заметки</string>
+    <string name="update_note">Изменить заметку</string>
+    <string name="clear_all_notes">Очистить заметки</string>
+    <string name="clear_notes_message">Все заметки очищены</string>
 </resources>
